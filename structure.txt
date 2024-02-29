@@ -1,0 +1,53 @@
+obj_detection/
+        ├─ data/
+        │    ├── images/
+        │    │      ├── armas (1).jpg
+        │    │      ├── armas (2).jpg
+        │    │      └── ...
+        │    ├── train_labels/
+        │    │      ├── armas (1).xml
+        │    │      ├── armas (2).xml
+        │    │      └── ...
+        │    ├── test_labels/
+        │    │      ├── armas (10).xml
+        │    │      ├── armas (20).xml
+        │    │      └── ...
+        │    ├── label_map.pbtxt       #converted by script(xmls to csvs) which also generate label_map file
+        │    ├── test_labels.csv       #converted by script(xmls to csvs)
+        │    ├── train_labels.csv      #converted by script(xmls to csvs)
+        │    ├── test_labels.record    #Run the generate_tfrecord.py script to create train.record files
+        │    └── train_labels.record   #Run the generate_tfrecord.py script to create test.record files.
+        │    └── Inference_graph/     #By Export inference graph command.
+        │           ├── saved_model
+        │           ├── checkpoints
+        │           └── ...
+        │     
+        └─ models/
+             ├─ research/
+             │      ├── fine_tuned_model/
+             │      │         ├── frozen_inference_graph.pb
+             │      │         └── ...
+             │      │         
+             │      ├── pretrained_model/
+             │      │         ├── frozen_inference_graph.pb
+             │      │         └── ...
+             │      │         
+             │      ├── object_detection/
+             │      │         ├── utils/
+             │      │         ├── samples/
+             │      │         │      ├── samples/ 
+             │      │         │      │       ├── configs/             
+             │      │         │      │       │     ├── ssd_mobilenet_v2_coco.config
+             │      │         │      │       │     ├── rfcn_resnet101_pets.config
+             │      │         │      │       │     └── ...
+             │      │         │      │       └── ... 
+             │      │         │      └── ...                                
+             │      │         ├── export_inference_graph.py
+             │      │         ├── model_main.py
+             │      │         └── ...
+             │      │         
+             │      ├── training/
+             │      │         ├── events.out.tfevents.xxxxx
+             │      │         └── ...               
+             │      └── ...
+             └── ...
