@@ -1,0 +1,46 @@
+TensorFlow/
+├─ addons/ (Optional)
+│  └─ labelImg/
+├─ models/
+│  ├─ community/
+│  ├─ official/
+│  ├─ orbit/
+│  ├─ research/
+│  └─ ...
+├─ scripts/
+│  └─ preprocessing/
+│     └─ partition_dataset.py
+└─ workspace/
+   └─ training_demo/
+      ├─ annotations/
+      │  ├─ label_map.pbtxt
+      │  ├─ test.record
+      │  └─ train.record
+      ├─ exported-models/
+      │  └─ my_model/
+      │     ├─ checkpoint/
+      │     ├─ saved_model/
+      │     └─ pipeline.config
+      ├─ images/
+      │  ├─ test/
+      │  │  └─ [test images and corresponding xml annotations]
+      │  └─ train/
+      │     └─ [train images and corresponding xml annotations]
+      ├─ models/
+      │  └─ my_ssd_resnet50_v1_fpn/
+      │     └─ pipeline.config
+      ├─ pre-trained-models/
+      │  └─ ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/
+      │     ├─ checkpoint/
+      │     ├─ saved_model/
+      │     └─ pipeline.config
+      └─ README.md
+
+
+
+label_map.pbtxt       #converted by script(xmls to csvs) which also generate label_map file
+test_labels.csv       #converted by script(xmls to csvs)
+train_labels.csv      #converted by script(xmls to csvs)
+test_labels.record    #Run the generate_tfrecord.py script to create train.record files
+train_labels.record   #Run the generate_tfrecord.py script to create test.record files.
+Inference_graph/      #By Export inference graph command.
